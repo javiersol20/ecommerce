@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Alert } from "react-native";
+import { Alert } from "react-native";
 import { List } from "react-native-paper";
 import {useNavigation} from "@react-navigation/native";
 import useAuth from "../../hooks/useAuth";
@@ -32,7 +32,7 @@ export default function Menu(){
           <List.Item title="Cambiar Email" description="Cambia el email de tu cuenta" left={(props) => <List.Icon {...props} icon="at" />} onPress={() => navigation.navigate("change-email")}/>
           <List.Item title="Cambiar Username" description="Cambia el nombre de usuario " left={(props) => <List.Icon {...props} icon="sim" />} onPress={() => navigation.navigate("change-username")}/>
           <List.Item title="Cambiar Contraseña" description="Cambia tu contraseña" left={(props) => <List.Icon {...props} icon="key" />} onPress={() => navigation.navigate("change-password")}/>
-          <List.Item title="Mis direcciones" description="Administrar mis direcciones" left={(props) => <List.Icon {...props} icon="map" />} onPress={() => console.log("ir a admin dir...")}/>
+          <List.Item title="Mis direcciones" description="Administrar mis direcciones" left={(props) => <List.Icon {...props} icon="map" />} onPress={() => navigation.navigate("addresses") } />
       </List.Section>
 
         <List.Section>
@@ -46,7 +46,3 @@ export default function Menu(){
         </>
     );
 }
-
-const styles = StyleSheet.create({
-
-});

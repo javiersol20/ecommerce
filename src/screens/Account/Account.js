@@ -9,6 +9,7 @@ import useAuth from "../../hooks/useAuth";
 import ScreenLoading from "../../components/ScreenLoading";
 import UserInfo from "../../components/Account/UserInfo";
 import Menu from "../../components/Account/Menu";
+import LogoProfile from "../../components/Account/Logo";
 
 export default function Account(){
     const [user, setUser] = useState(null);
@@ -35,6 +36,7 @@ export default function Account(){
                 <>
                     <Search/>
                     <ScrollView >
+                        <LogoProfile user={user} />
                         <UserInfo user={user} />
                         <Menu />
                     </ScrollView>

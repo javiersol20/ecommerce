@@ -30,7 +30,7 @@ export default function ChangeEmail(){
             setLoading(true);
             try {
                 const response = await updateUserApi(auth, formData);
-                if(response.statusCode) throw "El email ya existe";
+                if(response.statusCode) throw "El email ingresado ya existe";
                 navigation.goBack();
             }catch (e){
                Toast.show(e, {
@@ -44,7 +44,7 @@ export default function ChangeEmail(){
     });
     return(
         <View style={styles.container}>
-            <TextInput label="Email" style={formStyles.input} onChangeText={(text) => formik.setFieldValue("email", text)} value={formik.values.email} error={formik.errors.email}/>
+            <TextInput label="Correo electrónico" style={formStyles.input} onChangeText={(text) => formik.setFieldValue("email", text)} value={formik.values.email} error={formik.errors.email}/>
             <Button mode="contained" style={formStyles.btnSucces} onPress={formik.handleSubmit} loading={loading}>Cambiar email</Button>
         </View>
     )
