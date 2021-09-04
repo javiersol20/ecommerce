@@ -18,8 +18,7 @@ export default function Account(){
     useFocusEffect(
         useCallback(() => {
             (async () => {
-                // si quiero que el spiner salga cada vez que entran, si no solo comento esta linea
-                setUser(null);
+
                 const response = await getMeApi(auth.token);
                 setUser(response);
             }) ();

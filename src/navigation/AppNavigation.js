@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
-import Home from "../screens/Home";
+import ProductStack from "./ProductStack";
 import Favorites from "../screens/Favorites";
 import Cart from "../screens/Cart";
 import AccountStack from "./AccountStack";
@@ -16,7 +16,7 @@ export default function AppNavigation(){
         <NavigationContainer>
 
             <Tab.Navigator barStyle={styles.navigation} screenOptions={({ route }) => ({ tabBarIcon: (routeStatus) => { return setIcon(route, routeStatus )} })} >
-                <Tab.Screen name="home" component={Home} options={{title: "Inicio"}} />
+                <Tab.Screen name="homes" component={ProductStack} options={{title: "Inicio"}} />
 
                 <Tab.Screen name="favorites" component={Favorites} options={{title: "Favoritos"}} />
 
@@ -34,7 +34,7 @@ function setIcon(route, routeStatus)
     let iconName = "";
 
     switch (route.name){
-        case "home":
+        case "homes":
             iconName = "home"
             break;
         case "favorites":
