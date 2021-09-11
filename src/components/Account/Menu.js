@@ -37,7 +37,7 @@ export default function Menu(){
 
         <List.Section>
             <List.Subheader>App</List.Subheader>
-            <List.Item title="Mis pedidos" description="Listado de mis pedidos" left={(props) => <List.Icon {...props} icon="clipboard-list" />} onPress={() => console.log("ir a mis pedidosr...")}/>
+            <List.Item title="Mis pedidos" description="Listado de mis pedidos" left={(props) => <List.Icon {...props} icon="clipboard-list" />} onPress={() => navigation.navigate("orders")}/>
             <List.Item title="Lista de deseos" description="Mi lista de deseos" left={(props) => <List.Icon {...props} icon="heart" />} onPress={() => navigation.navigate("favorites")}/>
             <List.Item title="Cerrar Sesión" description="Cierra esta sesión y inicia con otra sesión" left={(props) => <List.Icon {...props} icon="logout" />} onPress={logoutAccount}/>
 

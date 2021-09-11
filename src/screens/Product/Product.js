@@ -18,6 +18,7 @@ export default function Product(props){
     const [product, setProduct] = useState(null);
     const [images, setImages] = useState([]);
     useEffect(() => {
+        setProduct(null);
         (async () => {
             const response = await getProductApi(params.idProduct);
             setProduct(response);
